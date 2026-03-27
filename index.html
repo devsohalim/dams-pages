@@ -6,9 +6,53 @@
   <title>Dams | 제주 프라이빗 독채 풀빌라</title>
   <meta
     name="description"
-    content="제주 서귀포 남원읍에 위치한 하루 한 팀만을 위한 프라이빗 독채 풀빌라. 귤밭과 돌담, 프라이빗 풀, 3개의 침실과 바다 전망을 갖춘 조용한 휴식의 공간."
+    content="제주 서귀포 남원읍에 위치한 하루 한 팀만을 위한 프라이빗 독채 풀빌라. 귤밭과 돌담, 프라이빗 풀, 침실 3개와 욕실 4개, 최대 9인 가족·친구 여행에 잘 어울리는 조용한 숙소."
   />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://dams-poolvilla.com/" />
+  <link rel="alternate" hreflang="ko" href="https://dams-poolvilla.com/" />
+  <link rel="alternate" hreflang="en" href="https://dams-poolvilla.com/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://dams-poolvilla.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Dams | 제주 서귀포 프라이빗 독채 풀빌라" />
+  <meta property="og:description" content="제주 서귀포 남원읍, 최대 9인 가족·친구 여행에 어울리는 프라이빗 독채 풀빌라 Dams." />
+  <meta property="og:url" content="https://dams-poolvilla.com/" />
+  <meta property="og:image" content="https://a0.muscache.com/im/pictures/12933a9a-6541-468b-a665-76ecb08e2379.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dams | 제주 서귀포 프라이빗 독채 풀빌라" />
+  <meta name="twitter:description" content="하루 한 팀만을 위한 제주 서귀포 남원읍 프라이빗 독채 풀빌라. 최대 9인." />
+  <meta name="twitter:image" content="https://a0.muscache.com/im/pictures/12933a9a-6541-468b-a665-76ecb08e2379.jpg" />
   <link rel="icon" type="image/svg+xml" href="./dams-favicon.svg" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LodgingBusiness",
+      "name": "Dams",
+      "url": "https://dams-poolvilla.com/",
+      "image": [
+        "https://a0.muscache.com/im/pictures/12933a9a-6541-468b-a665-76ecb08e2379.jpg",
+        "https://a0.muscache.com/im/pictures/hosting/Hosting-30044488/original/c22273ad-89d7-4425-b4b5-a4fd6b5c517a.jpeg"
+      ],
+      "description": "A private two-story pool villa in Namwon-eup, Seogwipo, Jeju. Ideal for families and small groups up to 9 guests, with 3 bedrooms, 4 bathrooms, a private pool, and sea-view terraces.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Namwon-eup, Seogwipo-si",
+        "addressRegion": "Jeju-do",
+        "addressCountry": "KR"
+      },
+      "numberOfRooms": 3,
+      "maximumAttendeeCapacity": 9,
+      "amenityFeature": [
+        { "@type": "LocationFeatureSpecification", "name": "Private pool", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Entire villa", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Sea-view terrace", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Suitable for families and groups", "value": true }
+      ],
+      "sameAs": [
+        "https://www.airbnb.co.kr/rooms/30044488"
+      ]
+    }
+  </script>
   <style>
     :root {
       --bg: #f7f4ef;
@@ -122,6 +166,35 @@
     .hero-content {
       width: min(calc(100% - 40px), var(--max));
       margin: 0 auto;
+    }
+
+    .lang-switch {
+      position: absolute;
+      top: 28px;
+      right: 28px;
+      z-index: 3;
+      display: inline-flex;
+      gap: 8px;
+      padding: 8px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+    }
+
+    .lang-switch a {
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.84);
+    }
+
+    .lang-switch a.active {
+      background: rgba(255, 255, 255, 0.94);
+      color: #1a1410;
     }
 
     .hero-kicker {
@@ -483,6 +556,11 @@
         min-height: auto;
       }
 
+      .lang-switch {
+        top: 18px;
+        right: 14px;
+      }
+
       .hero-inner {
         padding: 104px 0 64px;
       }
@@ -522,6 +600,10 @@
 </head>
 <body>
   <header class="hero">
+    <div class="lang-switch" aria-label="Language switcher">
+      <a href="/" class="active" lang="ko">KR</a>
+      <a href="/en/" lang="en">EN</a>
+    </div>
     <div class="hero-inner">
       <div class="hero-content">
         <div class="hero-kicker">Private Villa Stay in Jeju</div>
