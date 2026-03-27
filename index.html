@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dams | 제주 프라이빗 독채 풀빌라</title>
+  <meta
+    name="description"
+    content="제주 서귀포 남원읍에 위치한 하루 한 팀만을 위한 프라이빗 독채 풀빌라. 귤밭과 돌담, 프라이빗 풀, 3개의 침실과 바다 전망을 갖춘 조용한 휴식의 공간."
+  />
+  <link rel="icon" type="image/svg+xml" href="./dams-favicon.svg" />
+  <style>
+    :root {
+      --bg: #f7f4ef;
+      --bg-soft: #fcfaf7;
+      --text: #1f1a17;
+      --muted: #6f665f;
+      --line: rgba(31, 26, 23, 0.1);
+      --accent: #8f7557;
+      --accent-dark: #6f5840;
+      --white: #ffffff;
+      --shadow: 0 20px 60px rgba(31, 26, 23, 0.08);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --max: 1200px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+        "Pretendard", "Noto Sans KR", "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.75;
+      letter-spacing: -0.01em;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 96px 0;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      color: var(--accent-dark);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin: 0 0 18px;
+      font-size: clamp(30px, 4vw, 52px);
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      font-weight: 700;
+    }
+
+    .section-desc {
+      margin: 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      color: var(--white);
+      background:
+        linear-gradient(rgba(18, 15, 13, 0.28), rgba(18, 15, 13, 0.48)),
+        url("https://a0.muscache.com/im/pictures/12933a9a-6541-468b-a665-76ecb08e2379.jpg") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(18, 15, 13, 0.55) 0%,
+        rgba(18, 15, 13, 0.18) 45%,
+        rgba(18, 15, 13, 0.08) 100%
+      );
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      padding: 120px 0 80px;
+    }
+
+    .hero-content {
+      width: min(calc(100% - 40px), var(--max));
+      margin: 0 auto;
+    }
+
+    .hero-kicker {
+      margin-bottom: 18px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      opacity: 0.92;
+    }
+
+    .hero h1 {
+      margin: 0;
+      max-width: 850px;
+      font-size: clamp(40px, 7vw, 88px);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+      font-weight: 700;
+    }
+
+    .hero p {
+      margin: 26px 0 0;
+      font-size: clamp(17px, 2vw, 22px);
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 24px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: 0.25s ease;
+    }
+
+    .button-primary {
+      background: rgba(255, 255, 255, 0.95);
+      color: #1a1410;
+    }
+
+    .button-primary:hover {
+      transform: translateY(-1px);
+      background: #fff;
+    }
+
+    .button-secondary {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      backdrop-filter: blur(8px);
+    }
+
+    .button-secondary:hover {
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    .button-airbnb {
+      background: #ff385c;
+      color: #fff;
+    }
+
+    .button-airbnb:hover {
+      transform: translateY(-1px);
+      background: #e73354;
+    }
+
+    .button-naver {
+      background: #03c75a;
+      color: #fff;
+    }
+
+    .button-naver:hover {
+      transform: translateY(-1px);
+      background: #02b350;
+    }
+
+    .facts {
+      position: relative;
+      z-index: 2;
+      margin-top: 46px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .fact {
+      padding: 18px 18px 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(10px);
+    }
+
+    .fact strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .fact span {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .intro-grid,
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .card-pad {
+      padding: 34px;
+    }
+
+    .intro-copy p,
+    .story-copy p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .feature {
+      padding: 22px;
+      border-radius: var(--radius-md);
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+    }
+
+    .feature h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      line-height: 1.35;
+    }
+
+    .feature p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .image-stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    .image-stack img,
+    .gallery img,
+    .story-grid img {
+      border-radius: 24px;
+      object-fit: cover;
+      box-shadow: var(--shadow);
+    }
+
+    .image-stack .large {
+      aspect-ratio: 4 / 4.5;
+    }
+
+    .image-stack .small-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .image-stack .small-row img {
+      aspect-ratio: 1 / 1;
+    }
+
+    .gallery-wrap {
+      margin-top: 34px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 18px;
+    }
+
+    .gallery img {
+      height: 100%;
+      min-height: 280px;
+    }
+
+    .gallery .tall {
+      grid-row: span 2;
+      min-height: 580px;
+    }
+
+    .spec-box {
+      margin-top: 34px;
+    }
+
+    .spec-box > strong {
+      display: block;
+      margin-bottom: 16px;
+      font-size: 20px;
+    }
+
+    .spec-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0 32px;
+      border-top: 1px solid var(--line);
+    }
+
+    .spec {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .spec .label {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .spec strong {
+      font-size: 18px;
+      line-height: 1.45;
+      text-align: right;
+    }
+
+    .list-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .list-card {
+      padding: 28px;
+      background: var(--white);
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .list-card h3 {
+      margin: 0 0 14px;
+      font-size: 20px;
+    }
+
+    .list-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .list-card li + li {
+      margin-top: 10px;
+    }
+
+    .notice {
+      margin-top: 26px;
+      padding: 22px 24px;
+      border-radius: 18px;
+      background: rgba(143, 117, 87, 0.08);
+      border: 1px solid rgba(143, 117, 87, 0.16);
+      color: #5d5045;
+      font-size: 15px;
+    }
+
+    .cta {
+      position: relative;
+      overflow: hidden;
+      border-radius: 32px;
+      background:
+        linear-gradient(rgba(25, 18, 14, 0.42), rgba(25, 18, 14, 0.58)),
+        url("https://a0.muscache.com/im/pictures/hosting/Hosting-30044488/original/c22273ad-89d7-4425-b4b5-a4fd6b5c517a.jpeg") center/cover no-repeat;
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .cta-inner {
+      padding: 80px 42px;
+      text-align: center;
+    }
+
+    .cta h2 {
+      margin: 0 0 16px;
+      font-size: clamp(30px, 4.2vw, 56px);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+    }
+
+    .cta p {
+      max-width: 720px;
+      margin: 0 auto;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 17px;
+    }
+
+    .footer {
+      padding: 26px 0 56px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    @media (max-width: 1024px) {
+      .facts {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .spec-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .intro-grid,
+      .story-grid,
+      .gallery,
+      .list-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery .tall {
+        grid-row: span 1;
+        min-height: 360px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .section {
+        padding: 72px 0;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-inner {
+        padding: 104px 0 64px;
+      }
+
+      .facts,
+      .feature-grid,
+      .spec-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .spec {
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .spec strong {
+        text-align: left;
+      }
+
+      .image-stack .small-row {
+        grid-template-columns: 1fr;
+      }
+
+      .card-pad,
+      .list-card,
+      .spec-box,
+      .cta-inner {
+        padding: 24px;
+      }
+
+      .container,
+      .hero-content {
+        width: min(calc(100% - 28px), var(--max));
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-kicker">Private Villa Stay in Jeju</div>
+        <h1>
+          하루 한 팀,<br />
+          제주 서귀포 독채 풀빌라
+        </h1>
+        <p>
+          귤밭과 돌담 너머, 조용한 마을의 결을 따라 머무는 쉼.<br />
+          Dams는 프라이빗 풀과 넉넉한 객실, 바다를 바라보는 테라스를 갖춘
+          제주만의 여유로운 휴식 공간입니다.
+        </p>
+        <div class="hero-actions">
+          <a href="https://www.airbnb.co.kr/rooms/30044488" target="_blank" rel="noopener noreferrer" class="button button-airbnb">에어비앤비 예약</a>
+          <a href="https://map.naver.com/p/search/%EB%8B%B4%EC%8A%A4b/place/2008700831?placePath=/room" target="_blank" rel="noopener noreferrer" class="button button-naver">네이버 예약</a>
+        </div>
+
+        <div class="facts">
+          <div class="fact">
+            <strong>방해받지 않는 쉼</strong>
+            <span>하루 한 팀, 독채 단독 사용</span>
+          </div>
+          <div class="fact">
+            <strong>함께 머물기 좋은 공간</strong>
+            <span>최대 9인, 가족 · 친구 여행 추천</span>
+          </div>
+          <div class="fact">
+            <strong>여유로운 객실 구성</strong>
+            <span>침실 3개, 욕실 4개</span>
+          </div>
+          <div class="fact">
+            <strong>바다를 담은 테라스</strong>
+            <span>2층과 옥상에서 만나는 풍경</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="overview" class="section">
+      <div class="container intro-grid">
+        <div class="intro-copy">
+          <span class="eyebrow">Overview</span>
+          <h2 class="section-title">
+            북적임에서 멀어질수록,<br />
+            휴식은 더 깊어집니다
+          </h2>
+          <p>
+            Dams는 제주 서귀포 남원읍에 위치한 2층 독채 풀빌라입니다.
+            뒷정원의 귤밭과 정갈한 돌담을 지나 만나는 프라이빗 풀,
+            그리고 가족이나 가까운 사람들과 오롯이 머무를 수 있는 독립적인 공간이
+            이 숙소의 가장 큰 매력입니다.
+          </p>
+          <p>
+            실내는 편안함과 프라이버시에 집중해 구성되어 있으며,
+            3개의 침실과 여유로운 공용 공간, 그리고 바다를 향해 열려 있는
+            2층과 옥상 테라스가 머무는 시간을 한층 특별하게 만들어줍니다.
+          </p>
+
+          <div class="feature-grid">
+            <div class="feature">
+              <h3>온전한 프라이버시</h3>
+              <p>
+                하루 한 팀만 머무는 독채형 숙소로, 다른 손님과 마주치지 않는
+                편안한 휴식을 누릴 수 있습니다.
+              </p>
+            </div>
+            <div class="feature">
+              <h3>제주다운 풍경</h3>
+              <p>
+                귤밭과 돌담, 한적한 시골 마을의 분위기가 어우러져
+                조용하고 깊은 제주를 느낄 수 있습니다.
+              </p>
+            </div>
+            <div class="feature">
+              <h3>머물기 좋은 구조</h3>
+              <p>
+                침실 3개와 개별 욕실 중심의 구성으로 가족 여행,
+                우정 여행, 소규모 프라이빗 스테이에 잘 어울립니다.
+              </p>
+            </div>
+            <div class="feature">
+              <h3>바다를 만나는 시선</h3>
+              <p>
+                2층과 옥상 테라스에서 펼쳐지는 바다 풍경이
+                숙소의 무드를 더욱 깊고 특별하게 완성합니다.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="image-stack">
+          <img
+            class="large"
+            src="https://a0.muscache.com/im/pictures/12933a9a-6541-468b-a665-76ecb08e2379.jpg"
+            alt="Dams 메인 전경"
+          />
+          <div class="small-row">
+            <img
+              src="https://a0.muscache.com/im/pictures/hosting/Hosting-30044488/original/745c4973-f157-4c8b-9b04-bb7ab51b6d0c.jpeg"
+              alt="Dams 공간 이미지"
+            />
+            <img
+              src="https://a0.muscache.com/im/pictures/hosting/Hosting-30044488/original/67e2bbef-fc8d-4b63-93fe-2628e4837ca8.jpeg"
+              alt="Dams 실내 이미지"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <span class="eyebrow">Gallery</span>
+        <h2 class="section-title">머무는 순간마다 장면이 되는 공간</h2>
+        <p class="section-desc">
+          밝은 햇살이 머무는 실내, 정돈된 풀, 제주 풍경과 맞닿은 동선까지.
+          Dams는 보는 순간보다 머물수록 더 좋아지는 공간입니다.
+        </p>
+
+        <div class="gallery-wrap">
+          <div class="gallery">
+            <img
+              class="tall"
+              src="https://a0.muscache.com/im/pictures/hosting/Hosting-30044488/original/c22273ad-89d7-4425-b4b5-a4fd6b5c517a.jpeg"
+              alt="프라이빗 풀빌라 전경"
+            />
+            <img
+              src="https://a0.muscache.com/im/pictures/hosting/Hosting-30044488/original/04feedfc-8a37-4d44-9764-bf8b8e21a9dd.png"
+              alt="숙소 내부 이미지"
+            />
+            <img
+              src="https://a0.muscache.com/im/pictures/hosting/Hosting-30044488/original/7d77cacf-f7fa-4c85-aac1-17854178ee69.jpeg"
+              alt="숙소 분위기 이미지"
+            />
+            <img
+              src="https://a0.muscache.com/im/pictures/hosting/Hosting-30044488/original/c2a66902-f4ab-44e1-8f90-470fdf22c888.png"
+              alt="거실 또는 공용공간 이미지"
+            />
+            <img
+              src="https://a0.muscache.com/im/pictures/hosting/Hosting-30044488/original/36100209-8eed-4705-b639-467c2a354b91.png"
+              alt="침실 또는 실내 디테일 이미지"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container story-grid">
+        <div>
+          <img
+            src="https://a0.muscache.com/im/pictures/hosting/Hosting-30044488/original/745c4973-f157-4c8b-9b04-bb7ab51b6d0c.jpeg"
+            alt="Dams 라이프스타일 이미지"
+            style="aspect-ratio: 4 / 4.4;"
+          />
+        </div>
+        <div class="story-copy">
+          <span class="eyebrow">Stay Experience</span>
+          <h2 class="section-title">
+            머무름 자체가 일정이 되는,<br />
+            조용하고 사적인 제주
+          </h2>
+          <p>
+            이곳의 시간은 서두르지 않습니다. 아침에는 맑은 공기와 함께 천천히 하루를 열고,
+            낮에는 풀과 실내를 오가며 느긋한 리듬으로 쉬어가고,
+            저녁에는 바다와 하늘의 색이 바뀌는 장면을 바라보며 하루를 마무리할 수 있습니다.
+          </p>
+          <p>
+            화려한 자극보다 차분한 분위기, 북적이는 여행보다 깊이 쉬어가는 여행을 원한다면
+            Dams는 그 취향에 가장 잘 어울리는 선택이 됩니다.
+          </p>
+
+          <div class="spec-box">
+            <strong style="font-size: 20px;">숙소 구성 한눈에 보기</strong>
+            <div class="spec-grid">
+              <div class="spec">
+                <span class="label">위치</span>
+                <strong>제주 서귀포<br />남원읍</strong>
+              </div>
+              <div class="spec">
+                <span class="label">숙소 형태</span>
+                <strong>2층 독채<br />풀빌라</strong>
+              </div>
+              <div class="spec">
+                <span class="label">수용 인원</span>
+                <strong>최대 9인</strong>
+              </div>
+              <div class="spec">
+                <span class="label">객실 구성</span>
+                <strong>침실 3개<br />욕실 4개</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <span class="eyebrow">For Guests</span>
+        <h2 class="section-title">이런 분들께 특히 잘 어울립니다</h2>
+        <p class="section-desc" style="max-width: none;">
+          조용한 독채 숙소를 찾는 여행자, 프라이빗 풀빌라를 원하는 커플과 가족,
+          그리고 제주에서 제대로 쉬고 싶은 분들을 위한 공간입니다.
+        </p>
+
+        <div class="list-grid">
+          <div class="list-card">
+            <h3>추천 대상</h3>
+            <ul>
+              <li>제주에서 조용하고 감도 높은 독채 숙소를 찾는 분</li>
+              <li>프라이빗 풀을 중심으로 여유로운 시간을 보내고 싶은 분</li>
+              <li>가족, 친구와 함께 넉넉한 객실 구성의 숙소를 원하는 분</li>
+              <li>북적임보다 한적함과 프라이버시를 중요하게 생각하는 분</li>
+            </ul>
+          </div>
+          <div class="list-card">
+            <h3>공간 구성</h3>
+            <ul>
+              <li>1층: 거실, 주방, 공용 화장실, 다용도실</li>
+              <li>2층: 침실 3개, 각 객실 욕실 포함</li>
+              <li>야외: 프라이빗 풀, 귤밭과 돌담이 어우러진 정원 동선</li>
+              <li>전망: 2층 및 옥상 테라스에서 바다 조망 가능</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="notice">
+          자연과 가까운 제주 시골 마을에 위치한 숙소 특성상 계절과 환경에 따라 벌레가 있을 수 있습니다.
+          보다 쾌적한 환경 유지를 위해 정기적인 방역 관리를 진행하고 있습니다.
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="cta">
+          <div class="cta-inner">
+            <span class="eyebrow" style="color: rgba(255,255,255,0.74);">Dams</span>
+            <h2>
+              제주에서의 하루를<br />
+              더 조용하고 특별하게
+            </h2>
+            <p>
+              하루 한 팀만을 위한 프라이빗 독채 풀빌라에서
+              오롯이 쉬는 여행의 기준을 경험해보세요.
+            </p>
+            <div class="hero-actions" style="justify-content: center; margin-top: 28px;">
+              <a href="https://www.airbnb.co.kr/rooms/30044488" target="_blank" rel="noopener noreferrer" class="button button-airbnb">
+                에어비앤비 예약
+              </a>
+              <a href="https://map.naver.com/p/search/%EB%8B%B4%EC%8A%A4b/place/2008700831?placePath=/room" target="_blank" rel="noopener noreferrer" class="button button-naver">
+                네이버 예약
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © Dams. Private Villa Stay in Seogwipo, Jeju.
+    </div>
+  </footer>
+</body>
+</html>
